@@ -25,6 +25,9 @@ posts = Post.all
   )
 end
 
+Post.find_or_create_by!(title: "Becca Hatelace Rules!", body: "She's just awesome. There's nobody more awesomer. She's awesomesauce!")
+Comment.create_with(post_id: "51").find_or_create_by!(body: "Ragnarok will not be denied, not even by Becca Hatelace...")
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
