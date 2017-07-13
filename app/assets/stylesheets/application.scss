@@ -17,7 +17,16 @@
  @import "bootstrap";
 
  .user-info {
+   display: inline-block;
    margin-top: 9px;
+   margin-right: 5px;
+ }
+
+ .gravatar-user-info {
+   display: inline-block;
+   margin-right: 5px;
+   vertical-align: middle;
+   text-align: right;
  }
 
  .nav {
