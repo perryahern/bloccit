@@ -74,4 +74,20 @@ RSpec.describe Post, type: :model do
       end
     end
   end
+
+  describe "#post_self_vote" do
+    it "increments post up_votes to 1" do
+      expect(post.up_votes).to eq(1)
+    end
+
+    it "calls #post_self_vote on post creation" do
+      post = topic.posts.new(title: RandomData.random_sentence, body: RandomData.random_paragraph, user: user)
+      expect(post).to receive(:post_self_vote)
+      post.save
+    end
+
+    it "associates the vote with the post owner" do
+      expect(post.votes.first.user).to eq(post.user)
+    end
+  end
 end
