@@ -33,3 +33,6 @@ end
  gem 'bootstrap-sass'
 
  gem 'bcrypt'
+
+ # Store environment varialbles safely
+ gem 'figaro', '1.0'
