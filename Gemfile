@@ -36,3 +36,6 @@ end
 
  # Store environment varialbles safely
  gem 'figaro', '1.0'
+
+ # Build objects to use in testing
+ gem 'factory_girl_rails', '~> 4.0'
