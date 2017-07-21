@@ -1,0 +1,19 @@
+<div class="media">
+  <div class="media-body">
+    <h4 class="media-heading">
+      <% @user.favorites.each  do |favorite|%>
+        <% avatar_url = favorite.post.user.avatar_url(32) %>
+        <% if avatar_url %>
+          <div class="media-left" style="float: left;">
+            <%= image_tag avatar_url, class: 'media-object' %>
+          </div>
+        <% end %>
+        <div>
+          <%= link_to favorite.post.title, topic_post_path(favorite.post.topic, favorite.post) %><br>
+          <small><p style="margin-left: 10px;">has <%= pluralize(favorite.post.votes.count, "vote") %> and <%= pluralize(favorite.post.comments.count, "comment") %></p></small>
+          <br>
+        </div>
+      <% end %>
+    </h4>
+  </div>
+</div>
